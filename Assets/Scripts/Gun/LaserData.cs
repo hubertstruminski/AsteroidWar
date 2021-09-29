@@ -20,20 +20,14 @@ public class LaserData : MonoBehaviour
 
     public int CurrentIndexLevel = 0;
 
-    public int GetGunTypesCount()
-    {
-        return gunTypes.Length;
-    }
-
     private void Start()
     {
         CurrentIndexLevel = 0;
     }
 
-    public GunType GetCurrentWeapon()
-    {
-        return gunTypes[CurrentIndexLevel];
-    }
+    public int GetGunTypesCount() => gunTypes.Length;
+
+    public GunType GetCurrentWeapon() => gunTypes[CurrentIndexLevel];
 
     public void ChangeLaserLevel()
     {

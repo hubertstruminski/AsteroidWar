@@ -13,11 +13,12 @@ public class PlayerController : MonoBehaviour
     public int MoneyAmount = 0;
 
     private Menu menu;
+    private Button[] gameButtons;
 
     private void Start()
     {
         menu = FindObjectOfType<Menu>();
-        Debug.Log("menu: " + menu != null);
+        gameButtons = FindObjectsOfType<Button>();
     }
 
     private void Update()
@@ -27,10 +28,15 @@ public class PlayerController : MonoBehaviour
             if(touch.fingerId == 0)
             {
                 if (IsUIElementClicked()) return;
-
                 UpdatePosition(Input.GetTouch(0).position);
             }
         }
+    }
+
+    public void HandleMoney(int value)
+    {
+        MoneyAmount += value;
+        menu.MoneyText.text = "Money: " + MoneyAmount + "$";
     }
 
     private bool IsUIElementClicked()
@@ -39,8 +45,11 @@ public class PlayerController : MonoBehaviour
         
         if(go != null)
         {
-            if (go.name == menu.StopButton.name || go.name == menu.ShieldButton.name || go.name == menu.GunButton.name)
-                return true;
+            foreach(Button button in gameButtons)
+            {
+                if (button.name == go.name)
+                    return true;
+            }
         }
         return false;
     }
@@ -54,12 +63,5 @@ public class PlayerController : MonoBehaviour
         Vector3 worldSpaceCoord = Camera.main.ViewportToWorldPoint(pos);
         worldSpaceCoord.z = 10f;
         transform.position = Vector3.Lerp(transform.position, worldSpaceCoord, speedMovement * Time.deltaTime);
-    }
-
-    public void HandleMoney(int value)
-    {
-        MoneyAmount += value;
-
-        menu.MoneyText.text = "Money: " + MoneyAmount + "$";
     }
 }

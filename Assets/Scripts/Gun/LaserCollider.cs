@@ -12,6 +12,7 @@ public class LaserCollider : MonoBehaviour
             LaserData data = FindObjectOfType<LaserData>();
             PlayerController playerController = FindObjectOfType<PlayerController>();
 
+            Destroy(gameObject);
             asteroid.HandleDamage(data.GetCurrentWeapon().damage);
             playerController.HandleMoney(30);
         }

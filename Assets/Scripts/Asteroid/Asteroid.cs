@@ -6,21 +6,6 @@ public class Asteroid : MonoBehaviour
 {
     private AsteroidType asteroidType;
 
-    public AsteroidType GetAsteroidType()
-    {
-        return asteroidType;
-    }
-
-    public void HandleDamage(int value)
-    {
-        if(asteroidType.life <= 0)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        asteroidType.life -= value;
-    }
-
     private void Start()
     {
         asteroidType = FindObjectOfType<AsteroidData>().GetAsteroid();
@@ -32,10 +17,27 @@ public class Asteroid : MonoBehaviour
         ManageLifeCycle();
     }
 
+    public AsteroidType GetAsteroidType()
+    {
+        return asteroidType;
+    }
+
+    public void HandleDamage(int value)
+    {
+        if (asteroidType.life <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        asteroidType.life -= value;
+    }
+
     private void SetConfiguration()
     {
         GetComponent<SpriteRenderer>().sprite = asteroidType.sprite;
-        GetComponent<Rigidbody2D>().gravityScale = asteroidType.gravityScale;
+        Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D.gravityScale = 0;
+        rigidbody2D.velocity = Vector2.down * asteroidType.velocity;
         
         BoxCollider2D boxCollider = gameObject.AddComponent<BoxCollider2D>();
         boxCollider.isTrigger = true;

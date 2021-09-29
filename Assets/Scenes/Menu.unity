@@ -180,9 +180,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SHIELD
+  m_text: 'SHIELD (0)
 
-    (50$)'
+    (150$)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GUN
+  m_text: 'GUN (0)
 
     (100$)
 
@@ -513,12 +513,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMenu: {fileID: 1605960694}
   gameMenu: {fileID: 895313725}
-  stopButton: {fileID: 2004615167}
-  shieldButton: {fileID: 1542333364}
-  gunButton: {fileID: 622091081}
+  stopButtonText: {fileID: 1036888440}
   gunButtonText: {fileID: 49290199}
   moneyText: {fileID: 1671453330}
-  stopButtonText: {fileID: 1036888440}
 --- !u!1 &160897624
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class LaserController : MonoBehaviour
 {
@@ -17,18 +19,17 @@ public class LaserController : MonoBehaviour
     private Transform middleGunPoint;
 
     [SerializeField]
-    private float shootSpeed = 2f;
-
-    [SerializeField]
     private float shootPeriod = 0.25f;
 
     private float lastShootTime = 0;
 
     private LaserData data;
+    private Button[] gameButtons;
 
     private void Start()
     {
         data = FindObjectOfType<LaserData>();
+        gameButtons = FindObjectsOfType<Button>();
     }
 
     private void Update()
@@ -38,7 +39,7 @@ public class LaserController : MonoBehaviour
             //if(touch.fingerId == 1)
             if (touch.fingerId == 0)
             {
-                if (CanShoot())
+                if (CanShoot() && !CheckIfUIButtonIsClicked())
                 {
                     SpawnWeapon();
                 }
@@ -71,6 +72,21 @@ public class LaserController : MonoBehaviour
         laser2.GetComponent<Laser>().SetConfiguration();
 
         lastShootTime = Time.timeSinceLevelLoad;
+    }
+
+    private bool CheckIfUIButtonIsClicked()
+    {
+        GameObject go = EventSystem.current.currentSelectedGameObject;
+
+        if (go != null)
+        {
+            foreach (Button button in gameButtons)
+            {
+                if (button.name == go.name)
+                    return true;
+            }
+        }
+        return false;
     }
 
     private bool CanShoot()

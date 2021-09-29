@@ -7,7 +7,7 @@ public class AsteroidType
 {
     public Sprite sprite;
     public int life;
-    public float gravityScale = 0.35f;
+    public float velocity = 0.35f;
 }
 
 public class AsteroidData : MonoBehaviour

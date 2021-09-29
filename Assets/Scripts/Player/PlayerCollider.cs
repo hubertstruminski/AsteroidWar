@@ -8,7 +8,7 @@ public class PlayerCollider : MonoBehaviour
     {
         if(collision.gameObject.tag == "asteroid")
         {
-            Debug.Log("Player hit!");
+            
         }
     }
 }

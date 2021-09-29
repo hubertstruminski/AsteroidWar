@@ -5169,34 +5169,34 @@ MonoBehaviour:
   asteroidTypes:
   - sprite: {fileID: 21300000, guid: 6b069c62a3bf34b409ca0d1b00810aa7, type: 3}
     life: 20
-    gravityScale: 0.025
+    velocity: 2.6
   - sprite: {fileID: 21300000, guid: 1429a2f34a9b16147b46d0406837e275, type: 3}
     life: 20
-    gravityScale: 0.025
+    velocity: 2.6
   - sprite: {fileID: 21300000, guid: fe5f96c9f9dbc13408987f68d4c8be18, type: 3}
     life: 75
-    gravityScale: 0.025
+    velocity: 2.6
   - sprite: {fileID: 21300000, guid: a6d0407b34a01984393bd71ad54fe15d, type: 3}
     life: 75
-    gravityScale: 0.025
+    velocity: 2.6
   - sprite: {fileID: 21300000, guid: f71cb37ec83c7484198531f4f04c42b3, type: 3}
     life: 200
-    gravityScale: 0.005
+    velocity: 2.25
   - sprite: {fileID: 21300000, guid: 7992dce8fc192204bbaa2c781be2a192, type: 3}
     life: 200
-    gravityScale: 0.005
+    velocity: 2.25
   - sprite: {fileID: 21300000, guid: 823d1918e41b84d46a7d3195cc2c49ab, type: 3}
     life: 400
-    gravityScale: 0.0025
+    velocity: 1.85
   - sprite: {fileID: 21300000, guid: 7109268787565e8409850b51d5a73cb2, type: 3}
     life: 500
-    gravityScale: 0.0025
+    velocity: 1.85
   - sprite: {fileID: 21300000, guid: 6e0628094b83b9a448349ceac8f5a09a, type: 3}
     life: 500
-    gravityScale: 0.0005
+    velocity: 1.7
   - sprite: {fileID: 21300000, guid: 26bd5176cb21d9948a327c9d24fab0ce, type: 3}
     life: 600
-    gravityScale: 0.0005
+    velocity: 1.7
 --- !u!1 &1429161259
 GameObject:
   m_ObjectHideFlags: 0

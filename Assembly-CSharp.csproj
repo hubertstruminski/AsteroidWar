@@ -56,16 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Asteroid\Asteroid.cs" />
     <Compile Include="Assets\Scripts\Asteroid\AsteroidGenerator.cs" />
+    <Compile Include="Assets\Scripts\Gun\LaserData.cs" />
     <Compile Include="Assets\Scripts\UI\Menu.cs" />
     <Compile Include="Assets\Scripts\Gun\LaserController.cs" />
     <Compile Include="Assets\Scripts\Gun\LaserCollider.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Gun\Laser.cs" />
     <Compile Include="Assets\Scripts\Asteroid\AsteroidData.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />
-    <Compile Include="Assets\Scripts\Asteroid\Asteroid.cs" />
-    <Compile Include="Assets\Scripts\Gun\LaserData.cs" />
-    <Compile Include="Assets\Scripts\Gun\Laser.cs" />
+    <Compile Include="Assets\Scripts\Shield\ShieldData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

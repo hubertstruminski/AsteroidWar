@@ -14,13 +14,7 @@ public class Menu : MonoBehaviour
     private GameObject gameMenu;
 
     [SerializeField]
-    private Button stopButton;
-
-    [SerializeField]
-    private Button shieldButton;
-
-    [SerializeField]
-    private Button gunButton;
+    private TextMeshProUGUI stopButtonText;
 
     [SerializeField]
     private TextMeshProUGUI gunButtonText;
@@ -28,18 +22,10 @@ public class Menu : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI moneyText;
-
-    [SerializeField]
-    private TextMeshProUGUI stopButtonText;
+    public TextMeshProUGUI MoneyText { get { return moneyText; } }
 
     private static bool isStopped = false;
-
-    PlayerController player;
-
-    public Button StopButton { get { return stopButton; } }
-    public Button ShieldButton { get { return shieldButton; } }
-    public Button GunButton { get { return gunButton; } }
-    public TextMeshProUGUI MoneyText { get { return moneyText; } }
+    private PlayerController player;
 
     private void Awake()
     {
